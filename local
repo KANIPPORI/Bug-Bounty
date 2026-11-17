@@ -1,0 +1,21 @@
+cat > /tmp/ssrf-page/index.html <<'EOF'
+<!DOCTYPE html>
+<html>
+<body>
+<h3>KANIPPORI Local Network Test</h3>
+<pre id="result">Testing...</pre>
+<script>
+fetch("http://127.0.0.1:8765/")
+  .then(async response => {
+    document.getElementById("result").textContent =
+      "HTTP " + response.status +
+      "\n" + await response.text();
+  })
+  .catch(error => {
+    document.getElementById("result").textContent =
+      "Request failed: " + error.message;
+  });
+</script>
+</body>
+</html>
+EOF
