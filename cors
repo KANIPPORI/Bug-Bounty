@@ -1,0 +1,19 @@
+cat > /tmp/cors_server.py <<'EOF'
+from http.server import SimpleHTTPRequestHandler, HTTPServer
+
+class Handler(SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header(
+            "Access-Control-Allow-Origin",
+            "http://127.0.0.1:8766"
+        )
+        super().end_headers()
+
+HTTPServer(
+    ("127.0.0.1", 8765),
+    Handler
+).serve_forever()
+EOF
+
+cd /tmp/ssrf-lab
+python3 /tmp/cors_server.py
