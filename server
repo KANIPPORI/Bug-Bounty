@@ -1,0 +1,4 @@
+mkdir -p /tmp/ssrf-lab
+printf '%s\n' 'KANIPPORI-SSRF-TEST-2026' > /tmp/ssrf-lab/index.html
+cd /tmp/ssrf-lab
+python3 -m http.server 8765 --bind 127.0.0.1
