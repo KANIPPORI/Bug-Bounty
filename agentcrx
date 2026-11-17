@@ -1,0 +1,6 @@
+mkdir -p /tmp/ext_audit
+
+curl --noproxy '*' --fail --show-error --location \
+  --max-time 30 \
+  -o /tmp/ext_audit/agent.crx \
+  http://127.0.0.1:31460/agent.crx
