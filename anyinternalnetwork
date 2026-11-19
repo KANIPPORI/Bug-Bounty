@@ -1,0 +1,1 @@
+node -e 'const local=h=>h==="localhost"||h==="localhost."||h==="[::1]"||/^127\.\d+\.\d+\.\d+$/.test(h)||h==="chrome.local"||h.startsWith("172."); for(const h of ["127.0.0.1","172.16.0.1","10.0.0.1","192.168.1.1","169.254.1.1","[fc00::1]","[fe80::1]"])console.log(h,local(h)?"LOCAL":"NOT CLASSIFIED LOCAL")'
