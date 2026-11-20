@@ -1,0 +1,1 @@
+for f in /sys/fs/cgroup/memory.current /sys/fs/cgroup/pids.current /sys/fs/cgroup/pids.events /sys/fs/cgroup/cpu.stat; do if [ -r "$f" ]; then echo "=== $f ==="; cat "$f"; fi; done
