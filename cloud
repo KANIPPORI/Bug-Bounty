@@ -1,0 +1,1 @@
+printf '=== USER ===\n'; whoami; printf '\n=== HOSTNAME ===\n'; hostname; printf '\n=== MOUNT NAMESPACE ===\n'; readlink /proc/self/ns/mnt; printf '\n=== SESSION FILE ===\n'; if [ -f "$HOME/session-test.txt" ]; then echo 'FILE PERSISTED'; cat "$HOME/session-test.txt"; stat -c 'Created: %w | Modified: %y' "$HOME/session-test.txt"; else echo 'FILE NOT FOUND'; fi
