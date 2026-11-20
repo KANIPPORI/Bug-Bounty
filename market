@@ -1,0 +1,13 @@
+printf '=== HOSTNAME ===\n'
+hostname
+
+printf '\n=== BOOT ID ===\n'
+cat /proc/sys/kernel/random/boot_id
+
+printf '\n=== CHAT A MARKER ===\n'
+if [ -f /home/agent/chat-a-marker.txt ]; then
+    echo "MARKER FOUND"
+    cat /home/agent/chat-a-marker.txt
+else
+    echo "MARKER NOT FOUND"
+fi
