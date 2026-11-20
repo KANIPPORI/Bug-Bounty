@@ -1,0 +1,1 @@
+for f in /sys/fs/cgroup/memory.max /sys/fs/cgroup/cpu.max /sys/fs/cgroup/pids.max; do if [ -r "$f" ]; then printf '%s: ' "$f"; cat "$f"; fi; done
