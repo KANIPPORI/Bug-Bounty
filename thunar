@@ -1,0 +1,1 @@
+printf '=== TERMINAL ===\n'; readlink /proc/$$/ns/mnt; printf '\n=== THUNAR ===\n'; readlink /proc/11863/ns/mnt; printf '\n=== FILE CHECK ===\n'; ls -l /home/agent/browserproxy /home/agent/session-test.txt 2>&1
