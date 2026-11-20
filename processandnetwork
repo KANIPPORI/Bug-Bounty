@@ -1,0 +1,1 @@
+printf '=== USER ===\n'; id; printf '\n=== PROCESSES ===\n'; ps aux | head -20; printf '\n=== CURL ===\n'; curl --version | head -2
