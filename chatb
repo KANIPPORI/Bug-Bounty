@@ -1,0 +1,6 @@
+printf '=== CHAT B FILE CHECK ===\n'
+if [ -f /home/agent/shared-test.txt ]; then
+    cat /home/agent/shared-test.txt
+else
+    echo 'FILE NOT FOUND'
+fi
