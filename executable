@@ -1,0 +1,1 @@
+for app in chromium xfce4-terminal thunar mousepad blender gimp inkscape freecad openscad qgis paraview htop python3; do printf '%-18s ' "$app"; command -v "$app" || echo "Not found in PATH"; done
