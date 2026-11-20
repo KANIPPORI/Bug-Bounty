@@ -1,0 +1,14 @@
+printf '=== VIRTUALIZATION ===\n'
+systemd-detect-virt 2>/dev/null || true
+
+printf '\n=== KERNEL ===\n'
+uname -a
+
+printf '\n=== BOOT ID ===\n'
+cat /proc/sys/kernel/random/boot_id
+
+printf '\n=== PID 1 ===\n'
+ps -p 1 -o pid,comm,args
+
+printf '\n=== ROOT MOUNT ===\n'
+findmnt -T / -o TARGET,SOURCE,FSTYPE
