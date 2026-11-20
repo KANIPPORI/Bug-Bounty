@@ -1,0 +1,1 @@
+pid=$(pgrep -o chromium); if [ -n "$pid" ]; then tr '\0' '\n' < "/proc/$pid/environ" | cut -d= -f1 | grep -i proxy; else echo "Chromium process not found"; fi
