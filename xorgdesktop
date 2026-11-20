@@ -1,0 +1,1 @@
+for pid in self 269 277 278 279; do echo "=== $pid ==="; for ns in user pid net mnt; do printf '%s: ' "$ns"; readlink "/proc/$pid/ns/$ns" 2>/dev/null || echo unavailable; done; done
