@@ -1,0 +1,1 @@
+printf '%s\n' '=== PID 1 ==='; ps -p 1 -o pid,user,comm,args; printf '%s\n' '=== UID MAP ==='; cat /proc/self/uid_map; printf '%s\n' '=== GID MAP ==='; cat /proc/self/gid_map; printf '%s\n' '=== CGROUP ==='; cat /proc/self/cgroup
