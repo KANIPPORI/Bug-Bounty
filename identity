@@ -1,0 +1,15 @@
+printf '=== IDENTITY ===\n'
+id
+
+printf '\n=== USER NAMESPACE ===\n'
+cat /proc/self/uid_map
+cat /proc/self/gid_map
+
+printf '\n=== ROOT FILESYSTEM ===\n'
+findmnt -T / -o TARGET,SOURCE,FSTYPE
+
+printf '\n=== CHROMIUM FILESYSTEM ===\n'
+findmnt -T /usr/bin/chromium -o TARGET,SOURCE,FSTYPE
+
+printf '\n=== PROCESS SECURITY ===\n'
+grep -E '^(CapEff|NoNewPrivs|Seccomp):' /proc/self/status
