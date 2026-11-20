@@ -1,0 +1,1 @@
+printf '=== Security context ===\n'; id; printf '\n=== Process restrictions ===\n'; grep -E '^(NoNewPrivs|Seccomp|CapEff):' /proc/$$/status; printf '\n=== Filesystem ===\n'; findmnt -no FSTYPE /; printf '\n=== Kernel ===\n'; uname -r
