@@ -1,0 +1,18 @@
+printf '=== USER IDENTITY ===\n'
+id
+
+printf '\n=== USER NAMESPACE MAP ===\n'
+cat /proc/self/uid_map
+cat /proc/self/gid_map
+
+printf '\n=== ROOT FILESYSTEM ===\n'
+findmnt -T / -o TARGET,SOURCE,FSTYPE,OPTIONS
+
+printf '\n=== USR FILESYSTEM ===\n'
+findmnt -T /usr/bin/chromium -o TARGET,SOURCE,FSTYPE
+
+printf '\n=== PACKAGE DATABASE ===\n'
+ls -ld /var/lib/dpkg /var/lib/dpkg/status 2>&1
+
+printf '\n=== PROCESS SECURITY ===\n'
+grep -E '^(Uid|Gid|CapEff|NoNewPrivs|Seccomp):' /proc/self/status
